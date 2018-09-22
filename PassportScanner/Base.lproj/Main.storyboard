@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qHB-Os-1wr">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Scan View Controller-->
+        <scene sceneID="LPJ-C2-hG9">
+            <objects>
+                <viewController storyboardIdentifier="PassportScanner" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qHB-Os-1wr" customClass="MyScanViewController" customModule="PassportScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xPt-VS-8OA"/>
+                        <viewControllerLayoutGuide type="bottom" id="LEH-tj-rlo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bcf-pp-v92" userLabel="View">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="buY-rE-70k" userLabel="filterView" customClass="RenderView" customModule="EVGPUImage2">
+                                <rect key="frame" x="20" y="0.0" width="560" height="600"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5lZ-yS-UhP">
+                                        <rect key="frame" x="25" y="510" width="32" height="65"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="44"/>
+                                        <state key="normal" title="X">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="StopScanWithSender:" destination="qHB-Os-1wr" eventType="touchUpInside" id="Yao-Yo-5xG"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="overlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="NVV-Mh-nJH">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="600"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="NVV-Mh-nJH" firstAttribute="leading" secondItem="buY-rE-70k" secondAttribute="leading" id="1gj-hh-mMb"/>
+                                    <constraint firstAttribute="bottom" secondItem="5lZ-yS-UhP" secondAttribute="bottom" constant="25" id="5tP-zO-eQl"/>
+                                    <constraint firstItem="NVV-Mh-nJH" firstAttribute="top" secondItem="buY-rE-70k" secondAttribute="top" id="HmM-XO-Pco"/>
+                                    <constraint firstItem="5lZ-yS-UhP" firstAttribute="leading" secondItem="buY-rE-70k" secondAttribute="leading" constant="25" id="ShD-zc-xd5"/>
+                                    <constraint firstAttribute="bottom" secondItem="NVV-Mh-nJH" secondAttribute="bottom" id="ieu-ge-Oyx"/>
+                                    <constraint firstAttribute="trailing" secondItem="NVV-Mh-nJH" secondAttribute="trailing" id="w7x-kO-yVs"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="buY-rE-70k" firstAttribute="leading" secondItem="bcf-pp-v92" secondAttribute="leadingMargin" id="FM0-TO-uEk"/>
+                            <constraint firstItem="LEH-tj-rlo" firstAttribute="top" secondItem="buY-rE-70k" secondAttribute="bottom" id="IT5-gc-vyN"/>
+                            <constraint firstItem="buY-rE-70k" firstAttribute="top" secondItem="xPt-VS-8OA" secondAttribute="bottom" id="iCb-GN-uNU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="buY-rE-70k" secondAttribute="trailing" id="pWw-aS-oTb"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="renderView" destination="buY-rE-70k" id="ohS-Ma-lyv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="77q-Md-56S" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="276" y="-1121"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="overlay.png" width="1080" height="1920"/>
+    </resources>
+</document>
