@@ -6,7 +6,7 @@ s.summary  = 'An open source iOS framework for GPU-based image and video process
 s.homepage = 'https://github.com/BradLarson/GPUImage2'
 s.author   = { 'Brad Larson' => 'contact@sunsetlakesoftware.com' }
 s.source   = { :git => 'https://github.com/BradLarson/GPUImage2.git', :branch => "master" }
-
+s.swift_version = '4.0'
 s.source_files = 'framework/Source/**/*.{swift}'
 s.resources = 'framework/Source/Operations/Shaders/*.{fsh}'
 s.requires_arc = true
