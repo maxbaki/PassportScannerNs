@@ -8,13 +8,14 @@ Pod::Spec.new do |s|
 #
 
 s.name         = "PassportScannerNs"
-s.version      = "2.1.2"
+s.version      = "2.1.4"
 s.summary      = "Scan the MRZ code on a passport for NativeScript"
 
 s.description  = "Scan the MRZ code on a passport and it's data'"
 
 s.homepage     = "https://github.com/maxbaki/PassportScannerNs"
 
+s.swift_version = '4.0'
 
 # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 #
