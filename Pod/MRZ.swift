@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class MRZ: NSObject {
+@objc open class MRZ: NSObject {
     // check data with http://en.wikipedia.org/wiki/Machine-readable_passport
 
     /// Was the last scan valid. A value of 1 is for when all validations are OK

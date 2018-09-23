@@ -13,7 +13,7 @@ import GPUImage //Still using this for the rotate
 import UIImage_Resize
 import AVFoundation
 
-open class PassportScannerController: UIViewController, G8TesseractDelegate {
+@objc open class PassportScannerController: UIViewController, G8TesseractDelegate {
     
     /// Set debug to true if you want to see what's happening
     public var debug = false
