@@ -124,7 +124,7 @@ import AVFoundation
         super.viewDidAppear(animated)
         do {
             // Initialize the camera
-            camera = try Camera(sessionPreset:AVCaptureSession.Preset(rawValue: AVCaptureSession.Preset.hd1920x1080.rawValue))
+            camera = try Camera(sessionPreset:AVCaptureSession.Preset(rawValue: AVCaptureSession.Preset.hd1920x1080.rawValue).rawValue)
             camera.location = PhysicalCameraLocation.backFacing
             
             // Chain the filter to the render view
@@ -186,7 +186,7 @@ import AVFoundation
      
      - parameter sourceImage: The image that needs to be processed
      */
-    open func processImage(sourceImage: UIImage) -> Bool {
+    @objc open func processImage(sourceImage: UIImage) -> Bool {
         // resize image. Smaller images are faster to process. When letters are too big the scan quality also goes down.
         let croppedImage: UIImage = sourceImage.resizedImageToFit(in: CGSize(width: 350 * 0.5, height: 1800 * 0.5), scaleIfSmaller: true)
         
@@ -221,7 +221,7 @@ import AVFoundation
      
      - returns: The OCR result
      */
-    open func doOCR(image: UIImage) -> String {
+    @objc open func doOCR(image: UIImage) -> String {
         // Start OCR
         var result: String?
         self.tesseract.image = image
@@ -239,14 +239,14 @@ import AVFoundation
      
      :param: mrz The MRZ result
      */
-    open func successfulScan(mrz: MRZ) {
+    @objc open func successfulScan(mrz: MRZ) {
         assertionFailure("You should overwrite this function to handle the scan results")
     }
     
     /**
      Override this function in your own class for processing a cancel
      */
-    open func abortScan() {
+    @objc open func abortScan() {
         assertionFailure("You should overwrite this function to handle an abort")
     }
 }
