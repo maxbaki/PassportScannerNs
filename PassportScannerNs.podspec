@@ -82,7 +82,7 @@ s.frameworks = "Foundation"
 #  you can include multiple dependencies to ensure it works.
 
 s.requires_arc = true
-
+s.compiler_flags = '-UseModernBuildSystem=NO'
 
 s.dependency "TesseractOCRiOS"
 s.dependency "GPUImage"

@@ -3,11 +3,11 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'PassportScannerNs' do
-   pod 'TesseractOCRiOS', :path => '../TesseractOCRiOS'
-   pod 'UIImage-Resize'
-   pod 'GPUImage'
-   pod 'EVGPUImage2'
-end
+    pod 'TesseractOCRiOS'
+    pod 'UIImage-Resize'
+    pod 'GPUImage'
+    pod 'EVGPUImage2'
+ end
 
 post_install do |installer|
     installer.pods_project.targets.each do |target|
